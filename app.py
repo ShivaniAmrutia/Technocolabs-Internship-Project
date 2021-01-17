@@ -4,6 +4,7 @@ import pandas as pd
 from keras.preprocessing.text import Tokenizer
 from keras.preprocessing.sequence import pad_sequences
 from flask import Flask, request, render_template
+
 app = Flask(__name__)
 model = keras.models.load_model('model/model.h5')
 train = pd.read_csv('dataset/train.csv')
