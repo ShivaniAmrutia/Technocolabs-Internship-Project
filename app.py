@@ -9,7 +9,7 @@ app = Flask(__name__)
 model = keras.models.load_model('model/model.h5')
 train = pd.read_csv('dataset/train.csv')
 list_sequences_train = train["comment_text"]
-max_features = 25000
+max_features = 22000
 
 tokenizer = Tokenizer(num_words=max_features)
 train = tokenizer.fit_on_texts(list(list_sequences_train))
