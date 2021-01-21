@@ -33,14 +33,14 @@ def predict():
     final_test = pad_sequences(test, padding='post', maxlen=200)
 
     prediction = model.predict(final_test)
-    # toxic = prediction[0,0]
-    # severe_toxic = prediction[0,1]
-    # obscene = prediction[0,2]
-    # threat = prediction[0,3]
-    # insult = prediction[0,4]
-    # identity_hate = prediction[0,5]
+    toxic = round(prediction[0,0],4)
+    severe_toxic = round(prediction[0,1],4)
+    obscene = round(prediction[0,2],4)
+    threat = round(prediction[0,3],4)
+    insult = round(prediction[0,4],4)
+    identity_hate = round(prediction[0,5],4)
 
-    return render_template('index.html', prediction = prediction)
+    return render_template('index.html', toxic = toxic, severe_toxic = severe_toxic, obscene = obscene, threat = threat, insult = insult, identity_hate = identity_hate)
 
 if __name__ == "__main__":
     app.run(debug=True)
